@@ -15,6 +15,35 @@ gameMode = 0
 
 continuarJogo = True
 
+"""
+def jogar(jogador):
+    jogada = int(input("Escreva sua jogada: "))
+
+def compararJogadas(jogada1, jogada2):
+    if jogada1 == pedra and jogada2 == tesoura:
+        pontuacao1 += 1
+        print("Jogador 1 venceu")
+    if jogada1 == tesoura and jogada2 == papel:
+        pontuacao1 += 1
+        print("Jogador 1 venceu")
+    if jogada1 == papel and jogada2 == pedra:
+        pontuacao1 += 1
+        print("Jogador 1 venceu")
+
+    if jogada1 == pedra and jogada2 == papel:
+        pontuacao2 += 1
+        print("Jogador 2 venceu")
+    if jogada1 == papel and jogada2 == tesoura:
+        pontuacao2 += 1
+        print("Jogador 2 venceu")
+    if jogada1 == tesoura and jogada2 == pedra:
+        pontuacao2 += 1
+        print("Jogador 2 venceu")
+
+    if jogada1 == jogada2:
+        print("Empate")
+"""
+
 print("Bem vindo ao Joquempo!")
 
 print("1 - Jogador x Jogador")
