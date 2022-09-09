@@ -11,7 +11,8 @@ jogada2 = 0
 pontuacao1 = 0
 pontuacao2 = 0
 
-gameMode = 0
+jogador1 = "Computador 1"
+jogador2 = "Computador 2"
 
 continuarJogo = True
 
@@ -25,38 +26,40 @@ gameMode = int(input("Selecione um modo de jogo: "))
 
 if gameMode == 1:
 
-    while continuarJogo == True:
+    jogador1 = input("Nome do jogador 1: ")
+    jogador2 = input("Nome do jogador 2: ")
+
+    while continuarJogo:
 
         print("1 - PEDRA")
         print("2 - PAPEL")
         print("3 - TESOURA")
 
-        jogada1 = int(input("Jogador 1 escreva qual sua jogada:  "))
-        jogada2 = int(input("Jogador 2 escreva qual sua jogada:  "))
+        jogada1 = int(input(jogador1 + " escreva qual sua jogada:  "))
+        jogada2 = int(input(jogador2 + " escreva qual sua jogada:  "))
 
         if jogada1 == pedra and jogada2 == tesoura:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
-        if jogada1 == tesoura and jogada2 == papel:
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == papel:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
-        if jogada1 == papel and jogada2 == pedra:
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == pedra:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
+            print(jogador1 + " venceu a partida.")
 
-        if jogada1 == pedra and jogada2 == papel:
+        elif jogada1 == pedra and jogada2 == papel:
             pontuacao2 += 1
-            print("Jogador 2 venceu")
-        if jogada1 == papel and jogada2 == tesoura:
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == tesoura:
             pontuacao2 += 1
-            print("Jogador 2 venceu")
-        if jogada1 == tesoura and jogada2 == pedra:
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == pedra:
             pontuacao2 += 1
-            print("Jogador 2 venceu")
+            print(jogador2 + " venceu a partida.")
 
-        if jogada1 == jogada2:
+        else:
             print("Empate")
-
 
         print("Você quer continuar?")
         print("1 - SIM")
@@ -66,46 +69,49 @@ if gameMode == 1:
         if continuarJogo == "1":
             continuarJogo = True
 
-        if continuarJogo == "2":
+        elif continuarJogo == "2":
             if pontuacao1 > pontuacao2:
-                print("Jogador 1 venceu! Pontuação: " + str(pontuacao1))
-            if pontuacao2 > pontuacao1:
-                print("Jogador 2 venceu! Pontuação: " + str(pontuacao2))
+                print(jogador1 + " venceu! Pontuação: " + str(pontuacao1))
+            elif pontuacao2 > pontuacao1:
+                print(jogador2 + " venceu! Pontuação: " + str(pontuacao2))
             continuarJogo = False
 
 if gameMode == 2:
 
-    while continuarJogo == True:
+    jogador1 = input("Nome do jogador: ")
+    jogador2 = "Computador"
+
+    while continuarJogo:
 
         print("1 - PEDRA")
         print("2 - PAPEL")
         print("3 - TESOURA")
 
-        jogada1 = int(input("Jogador 1 escreva qual sua jogada:  "))
+        jogada1 = int(input(jogador1 + " escreva qual sua jogada:  "))
         jogada2 = random.randint(1, 3)
-        print("Computador jogou: " + str(jogada2))
+        print(jogador2 + " jogou: " + str(jogada2))
 
         if jogada1 == pedra and jogada2 == tesoura:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
-        if jogada1 == tesoura and jogada2 == papel:
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == papel:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
-        if jogada1 == papel and jogada2 == pedra:
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == pedra:
             pontuacao1 += 1
-            print("Jogador 1 venceu")
+            print(jogador1 + " venceu a partida.")
 
-        if jogada1 == pedra and jogada2 == papel:
+        elif jogada1 == pedra and jogada2 == papel:
             pontuacao2 += 1
-            print("Computador venceu")
-        if jogada1 == papel and jogada2 == tesoura:
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == tesoura:
             pontuacao2 += 1
-            print("Computador venceu")
-        if jogada1 == tesoura and jogada2 == pedra:
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == pedra:
             pontuacao2 += 1
-            print("Computador venceu")
+            print(jogador2 + " venceu a partida.")
 
-        if jogada1 == jogada2:
+        else:
             print("Empate")
 
         print("Você quer continuar?")
@@ -114,11 +120,62 @@ if gameMode == 2:
         continuarJogo = input("Continuar jogo? ")
 
         if continuarJogo == "1":
-           continuarJogo = True
+            continuarJogo = True
 
-        if continuarJogo == "2":
-           if pontuacao1 > pontuacao2:
-              print("Jogador 1 venceu! Pontuação: " + str(pontuacao1))
-           if pontuacao2 > pontuacao1:
-                print("Computador venceu! Pontuação: " + str(pontuacao2))
-           continuarJogo = False
+        elif continuarJogo == "2":
+            if pontuacao1 > pontuacao2:
+                print(jogador1 + " venceu! Pontuação: " + str(pontuacao1))
+            elif pontuacao2 > pontuacao1:
+                print(jogador2 + " venceu! Pontuação: " + str(pontuacao2))
+            continuarJogo = False
+
+if gameMode == 3:
+
+    while continuarJogo:
+
+        print("1 - PEDRA")
+        print("2 - PAPEL")
+        print("3 - TESOURA")
+
+        jogada1 = random.randint(1, 3)
+        print(jogador1 + " jogou: " + str(jogada1))
+        jogada2 = random.randint(1, 3)
+        print(jogador2 + " jogou: " + str(jogada2))
+
+        if jogada1 == pedra and jogada2 == tesoura:
+            pontuacao1 += 1
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == papel:
+            pontuacao1 += 1
+            print(jogador1 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == pedra:
+            pontuacao1 += 1
+            print(jogador1 + " venceu a partida.")
+
+        elif jogada1 == pedra and jogada2 == papel:
+            pontuacao2 += 1
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == papel and jogada2 == tesoura:
+            pontuacao2 += 1
+            print(jogador2 + " venceu a partida.")
+        elif jogada1 == tesoura and jogada2 == pedra:
+            pontuacao2 += 1
+            print(jogador2 + " venceu a partida.")
+
+        else:
+            print("Empate")
+
+        print("Você quer continuar?")
+        print("1 - SIM")
+        print("2 - NÃO")
+        continuarJogo = input("Continuar jogo? ")
+
+        if continuarJogo == "1":
+            continuarJogo = True
+
+        elif continuarJogo == "2":
+            if pontuacao1 > pontuacao2:
+                print(jogador1 + " venceu! Pontuação: " + str(pontuacao1))
+            if pontuacao2 > pontuacao1:
+                print(jogador2 + " venceu! Pontuação: " + str(pontuacao2))
+            continuarJogo = False
