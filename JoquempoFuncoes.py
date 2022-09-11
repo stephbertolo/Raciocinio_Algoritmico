@@ -58,10 +58,9 @@ def continuar_jogo():
         continuarJogo = True
 
     elif continuarJogo == "2":
-        if pontuacao1 > pontuacao2:
-            print(jogador1 + " venceu! Pontuação: " + str(pontuacao1))  # Print que mostra o nome do estudante e sua pontuação ao final da partida.
-        elif pontuacao2 > pontuacao1:
-            print(jogador2 + " venceu! Pontuação: " + str(pontuacao2))
+        print("Obrigada " + jogador1 + " e " + jogador2 + " por jogarem! Este é o placar: ")   # Print que mostra o nome dos estudantes e o placar geral ao final da partida.
+        print(jogador1 + " = " + str(pontuacao1))
+        print(jogador2 + " = " + str(pontuacao2))
         continuarJogo = False
 
 
